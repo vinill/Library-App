@@ -18,5 +18,21 @@
     "bootstrap": "^4.0.0",
     "jquery": "^3.3.1",
     "font-awesome": "^5.0.6"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/js/bootstrap.js",
+        "dist/css/bootstrap.min.css",
+        "less/bootstrap.less"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "web-fonts-with-css/less/fontawesome.less",
+        "web-fonts-with-css/css/fontawesome.css",
+        "web-fonts-with-css/scss/fontawesome.scss"
+      ]
+    }
   }
 }
