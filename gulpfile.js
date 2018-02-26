@@ -28,23 +28,23 @@ gulp.task('inject', function () {
         ignorePath: '../../public'
     };
 
-    return gulp.src('./source/views/*.html')
+    return gulp.src('./source/views/*.ejs')
         .pipe(wiredep(options))
         .pipe(inject(injectSrc, injectOpions))
         .pipe(gulp.dest('./source/views'));
 });
 
-gulp.task('serve',['style', 'inject'],function () {
-   var options = {
-       script: 'app.js',
-       delayTime: 1,
-       env: {
-           'PORT': 3000
-       },
-       watch: jsFiles
-   };
-   return nodemon(options)
-       .on('restart', function (ev) {
-           console.log('Restarting.....');
-       });
+gulp.task('serve', ['style', 'inject'], function () {
+    var options = {
+        script: 'app.js',
+        delayTime: 1,
+        env: {
+            'PORT': 3000
+        },
+        watch: jsFiles
+    };
+    return nodemon(options)
+        .on('restart', function (ev) {
+            console.log('Restarting.....');
+        });
 });
