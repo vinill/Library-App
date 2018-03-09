@@ -11,6 +11,7 @@ var nav = [{
     Text: 'Authors'
 }];
 var bookRouter = require('./source/routes/bookRoutes')(nav);
+var adminRouter = require('./source/routes/adminRoutes')(nav);
 
 app.use(express.static('public'));
 app.set('views', './source/views');
@@ -18,6 +19,7 @@ app.set('views', './source/views');
 app.set('view engine', 'ejs');
 
 app.use('/Books', bookRouter);
+app.use('/Admin', adminRouter);
 
 app.get('/', function (req, res) {
     res.render('index', {
