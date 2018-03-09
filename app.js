@@ -1,6 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parers');
+var cookieParser = require('cookie-parser');
 var passport = require('passport');
 var session = require('express-session');
 
@@ -22,7 +22,7 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
-app.use(session({sercret: 'library'}));
+app.use(session({secret: 'library'}));
 
 require('./source/config/passport')(app);
 
